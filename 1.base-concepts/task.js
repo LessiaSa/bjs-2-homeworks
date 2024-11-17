@@ -2,6 +2,7 @@
 //ax2+bx+c = 0;
 function solveEquation(a, b, c) {
   let arr = [];
+  let x;
   //(a * (Math.pow(x, 2)) + b * x + c) = 0;
   let d = (Math.pow(b, 2) - 4 * a * c);
   if (d > 0) {
@@ -21,11 +22,11 @@ console.log(solveEquation(1, 2, 0));
 console.log(solveEquation(2, 7, 10));
  
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
-  let percentMonth = percent/100/12;
-  let bodyLoan = amount - contribution;
-  let s = bodyLoan;
-  let p = percentMonth;
-  let n = countMonths;
+  const percentMonth = percent/100/12;
+  const bodyLoan = amount - contribution;
+  const s = bodyLoan;
+  const p = percentMonth;
+  const n = countMonths;
   if (isNaN(percentMonth) || percentMonth < 0) {
     return false;
   } else if (isNaN(bodyLoan) || bodyLoan < 0) {
@@ -33,8 +34,8 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   } else if (isNaN(countMonths) || countMonths < 0) {
     return false;
   } else {
-    let paymentMonth = s * (p + (p / (((1 + p)**n) - 1)));
-    let totalAmount = Number((paymentMonth * countMonths).toFixed(2));
+    const paymentMonth = s * (p + (p / (((1 + p)**n) - 1)));
+    const totalAmount = Number((paymentMonth * countMonths).toFixed(2));
     return totalAmount;
   }
 }
