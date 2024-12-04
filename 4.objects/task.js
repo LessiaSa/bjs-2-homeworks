@@ -6,15 +6,17 @@ function Student(name, gender, age) {
 }
 let student1 = new Student("Василиса", "женский", 19);
 let student2 = new Student("Артём", "мужской", 25);
-let student3 = new Student("Саша", "мужской", 18);
 
 Student.prototype.setSubject = function (subjectName) {
     this.subject = subjectName;  
 }
 
-Student.prototype.addMarks = function (...marks) {
-    this.marks === undefined ? this.marks = marks : this.marks.push(...marks);
+Student.prototype.addMarks = function(...marks) {
+	if (this.hasOwnProperty("marks")) {
+		this.marks.push(...marks);
+	}
 }
+
 
 Student.prototype.getAverage = function () {
     if (this.hasOwnProperty(`marks`) === false || this.marks.length === 0) {
@@ -46,6 +48,5 @@ student2.setSubject("Geometry");
 student2.exclude('плохая учёба')
 console.log(student2)
 //{name: "Артём", gender: "мужской", age: 25, excluded: "плохая учёба"}
-student3.addMarks();
-console.log(student3.getAverage());
-console.log(student3);
+student2.addMarks(3);
+console.log(student2);
