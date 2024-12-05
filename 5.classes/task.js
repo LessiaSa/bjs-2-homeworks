@@ -1,8 +1,8 @@
 class PrintEditionItem {
-    constructor(name, releaseDate, pageCount) {
+    constructor(name, releaseDate, pagesCount) {
         this.name = name;
         this.releaseDate = releaseDate;
-        this.pageCount = pageCount;
+        this.pagesCount = pagesCount;
         this.state = 100;
         this.type = null;
     }
@@ -30,22 +30,22 @@ const sherlock = new PrintEditionItem(
     1008
    );
    
-//    console.log(sherlock.releaseDate); //2019
-//    console.log(sherlock.state); //100
-//    sherlock.fix();
-//    console.log(sherlock.state); //100
+   console.log(sherlock.releaseDate); //2019
+   console.log(sherlock.state); //100
+   sherlock.fix();
+   console.log(sherlock.state); //100
 
 class Magazine extends PrintEditionItem {
-    constructor(name,releaseDate, pageCount) {
-        super(name, releaseDate, pageCount);
+    constructor(name,releaseDate, pagesCount) {
+        super(name, releaseDate, pagesCount);
         this.state = 100;
-        this.type = "magazin";
+        this.type = "magazine";
     }
 }
 
 class Book extends PrintEditionItem {
-    constructor(author, name,releaseDate, pageCount) {
-        super(name, releaseDate, pageCount);
+    constructor(author, name,releaseDate, pagesCount) {
+        super(name, releaseDate, pagesCount);
         this.author = author;
         this.state = 100;
         this.type = "book";
@@ -53,24 +53,24 @@ class Book extends PrintEditionItem {
 }
 
 class NovelBook extends Book {
-    constructor(author, name,releaseDate, pageCount) {
-        super(author,name, releaseDate, pageCount);
+    constructor(author, name,releaseDate, pagesCount) {
+        super(author,name, releaseDate, pagesCount);
         this.state = 100;
         this.type = "novel";
     }
 }
 
 class FantasticBook extends Book {
-    constructor(author, name,releaseDate, pageCount) {
-        super(author, name, releaseDate, pageCount);
+    constructor(author, name,releaseDate, pagesCount) {
+        super(author, name, releaseDate, pagesCount);
         this.state = 100;
         this.type = "fantastic";
     }
 }
 
 class DetectiveBook extends Book {
-    constructor(author, name,releaseDate, pageCount) {
-        super(author, name, releaseDate, pageCount);
+    constructor(author, name,releaseDate, pagesCount) {
+        super(author, name, releaseDate, pagesCount);
         this.state = 100;
         this.type = "detective";
     }
@@ -83,13 +83,13 @@ const picknick = new FantasticBook(
     168
   );
   
-//   console.log(picknick.author); //"Аркадий и Борис Стругацкие"
-//   picknick.state = 10;
-//   console.log(picknick.state); //10
-//   picknick.fix();
-//   console.log(picknick.state); //15
+  console.log(picknick.author); //"Аркадий и Борис Стругацкие"
+  picknick.state = 10;
+  console.log(picknick.state); //10
+  picknick.fix();
+  console.log(picknick.state); //15
 
-// 
+
 class Library {
     constructor (name) {
         this.name = name;
